@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 const { token } = require('./config.json');
-const soundCommands = ["!champpool", "!chrizzyb", "!dicken", "!flashlvl1", "!joellol", "!steppaupp", "!surrender", "!taggalångt", "!kaka"];
+const soundCommands = ["!champpool", "!chrizzyb", "!dicken", "!flashlvl1", "!joellol", "!steppaupp", "!surrender", "!taggalångt", "!kaka", "!jane", "!astronomia"];
 var mentionReplies = ["nah dude", "hell nah", "probably", "not really", "hell yeah brotha", "yes", "no", "maybe", "xD", "most certainly", "no doubt", "lol are u fucking stupid?", "haha, fak u"]
 
 bot.on('ready', () => {
