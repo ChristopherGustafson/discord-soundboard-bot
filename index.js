@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 const { token } = require('./config.json');
-const soundCommands = ["!champpool", "!chrizzyb", "!dicken", "!flashlvl1", "!joellol", "!steppaupp", "!surrender", "!taggalångt", "!kaka", "!jane", "!astronomia", "!crab"];
+const soundCommands = ["!champpool", "!chrizzyb", "!dicken", "!flashlvl1", "!joellol", "!steppaupp", "!surrender", "!taggalångt", "!kaka", "!jane", "!astronomia", "!crab", "!sukdik"];
 var mentionReplies = ["nah dude", "hell nah", "probably", "not really", "hell yeah brotha", "yes", "no", "maybe", "xD", "most certainly", "no doubt", "lol are u fucking stupid?", "haha, fak u"]
 
 bot.on('ready', () => {
@@ -27,7 +27,7 @@ bot.on('message', msg => {
   switch (msg.content) {
 
     case "!stop":
-      voiceChannel = msg.guild.channels.resolve("198883992550768641");
+      voiceChannel = msg.member.voice.channel;
       voiceChannel.leave();
       console.log("Left");
       break;
@@ -38,7 +38,7 @@ bot.on('message', msg => {
 
     case "<:joellol:693565923579134022>":
       if (msg.guild !== "undefined" && msg.guild) {
-        voiceChannel = msg.guild.channels.resolve("198883992550768641");
+        voiceChannel = msg.member.voice.channel;
         if (typeof voiceChannel !== "undefined" && voiceChannel) {
           voiceChannel.join()
             .then(connection => {
@@ -59,8 +59,8 @@ bot.on('message', msg => {
 
       soundCommands.forEach(command => {
         if (sound === command) {
-          if (msg.guild !== "undefined" && msg.guild) {
-            voiceChannel = msg.guild.channels.resolve("198883992550768641");
+          if (msg.guild !== "undefined" && msg.guild) {     
+            voiceChannel = msg.member.voice.channel;
             if (typeof voiceChannel !== "undefined" && voiceChannel) {
               voiceChannel.join()
                 .then(connection => {
