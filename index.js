@@ -32,6 +32,10 @@ bot.on('message', msg => {
       console.log("Left");
       break;
 
+    case "!commands":
+      msg.channel.send("Possible commands: " + soundCommands.join(", "), { tts: true });
+      break;
+
     case "ping":
       msg.channel.send("fak u", { tts: true });
       break;
